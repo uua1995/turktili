@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/61ceb144e8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Túrkshe - Qaraqalpaqsha sózler</title>
+</head>
+<body onload="focusOnInput()" oncontextmenu="return false;">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">TúrKar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sózlerdi izlew<span class="badge bg-danger">Tez arada</span></a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                  <!-- Button trigger modal -->
+              <a class="nav-link"  data-bs-toggle="modal" data-bs-target="#infoModal">Sayt haqqında</a>
+            </li>
+            <li class="nav-item">
+              <i class="nav-link fa-solid fa-moon" id="chngColor"></i>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+    <div class="badge bg-dark text-wrap number">
+      Bazaǵa kiritilgen sózler sanı: <br>
+      <span id="counter" data-val="400">0</span>
+    </div>
+    <form method="post" name="contact-form">
+
+            <label for="english" class="form-label">Túrkshe sózdi kiritiń</label>
+            <input type="text" class="form-control" id="english" name="english" autocomplete="off" required  oninvalid="this.setCustomValidity('Siz bul jerge sóz kiritpedińiz!')">
+
+            <label for="karakalpak" class="form-label">Qaraqalpaqsha awdarmasın kiritiń</label>
+            <input type="text" class="form-control" id="karakalpak" name="karakalpak" autocomplete="off" required  oninvalid="this.setCustomValidity('Siz bul jerge sóz kiritpedińiz!')">
+
+            <label for="karakalpak" class="form-label">Sózdiń túsindirmesi</label>
+
+            <select class="form-select" name="meaning" aria-label="Default select example">
+                <option selected value="">Menyudı ashıw ushın basıń</option>
+                <option value="Feyil">Feyil</option>
+                <option value="Atlıq">Atlıq</option>
+                <option value="Kelbetlik">Kelbetlik</option>
+                <option value="Sanlıq">Sanlıq</option>
+                <option value="Soraw">Soraw</option>             
+                <option value="Soraw">Soraw</option>             
+              </select>   
+        <div style="text-align: center;">
+            <input type="submit" value="Jiberiw" id="okBtn" name="add" class="btn btn-primary">
+        </div>
+    </form>
+  <!-- Modal info -->
+  <div class="modal fade" id="infoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Sayt haqqında</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Bul sayt Túrk tilindegi sózlerdiń awdarmasın maǵlıwmatlar bazasına kiritiw ishın jaratıldı.
+          <p>Sózlerdi kiritiw ushın birinshi kiritiw maydanına túrkshe sózdi, ekinshisine sol sózdiń qaraqalpaqsha awdarması jazıladı.</p>
+          <p>Keyininen, tańlaw menyusınan <img src="img/meaning.png" alt=""> sol sózge túsindirme beriledi.</p>
+          <p>Soń, <span class="btn btn-success">Jiberiw</span> túymesi basıladı.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Jabıw</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- success msg -->
+    <div class="toast-container top-0 end-0 p-3">
+    <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          <img src="img/icon.png" class="rounded me-2">
+          <strong class="me-auto">Túrkshe - Qaraqalpaqsha sózler</strong>
+          <small class="text-muted">0 sekund aldın</small>
+        </div>
+        <div class="toast-body">
+            Jańa sóz bazaǵa kiritldi.
+        </div>
+      </div>
+    </div>
+<!-- error msg -->
+    <div class="toast-container top-0 end-1 p-3">
+      <div class="toast error" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+            <img src="img/icon-error.png" class="rounded me-2">
+            <strong class="me-auto">Túrkshe - Qaraqalpaqsha sózler</strong>
+            <small class="text-muted">0 sekund aldın</small>
+          </div>
+          <div class="toast-body">
+            Bul sóz bazaǵa alle qashan kiritilgen. Basqa sóz kiritiń!!!
+          </div>
+        </div>
+      </div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
